@@ -1,0 +1,11 @@
+pipeline:
+- publish:
+    image: plugins/docker
+    secrets:
+    - user_name
+    repo: vigohe/drone-poc
+
+secrets:
+  user_name:
+    external:
+      name: secret/data/docker#user
