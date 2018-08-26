@@ -1,12 +1,6 @@
 pipeline:
-  run-tests:
-    image: node:6
-    commands:
-      - echo $USERNAME
-    secrets: [ username ]
-
   poc:
-    image: vigohe/drone-var-poc:b-12
+    image: vigohe/drone-var-poc:b-13
     vault:
       - docker_username=secret/docker-poc#username
       - docker_password=secret/docker-poc#password
