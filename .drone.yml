@@ -2,4 +2,4 @@ pipeline:
   build:
     image: node:carbon-alpine
     commands:
-      - echo "HOLA MUNDO!"
+      - echo "HOLA MUNDO!!!!"
