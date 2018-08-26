@@ -10,7 +10,4 @@ pipeline:
     vault:
       - docker_username=secret/docker-poc#username
       - docker_password=secret/docker-poc#password
-      - USERNAME
-      - PASSWORD
     secrets: [ username, password ]
-    build_args_from_env: [ username ]
