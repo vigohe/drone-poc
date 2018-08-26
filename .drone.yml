@@ -1,9 +1,10 @@
 pipeline:
   poc:
-    image: vigohe/drone-var-poc:b-7
+    image: vigohe/drone-var-poc:b-8
     vault:
       - docker_username=secret/docker-poc#username
       - docker_password=secret/docker-poc#password
       - USERNAME
       - PASSWORD
     secrets: [ username, password ]
+    values: [username, password]
