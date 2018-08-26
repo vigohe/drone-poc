@@ -1,7 +1,7 @@
 pipeline:
   poc:
-    image: vigohe/drone-var-poc:b-14
-    vault:
-      - docker_username=secret/docker-poc#username
-      - docker_password=secret/docker-poc#password
+    image: vigohe/drone-var-poc:b-16
+    env_vars:
+      VERSION: b-${DRONE_BUILD_NUMBER}
+      NODE_ENV: test
     secrets: [ username, password ]
