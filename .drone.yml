@@ -12,7 +12,7 @@ pipeline:
 secrets:
   docker_username:
     external:
-      name: secret/data/docker-poc/data#user
+      name: secret/docker-poc#user
   docker_password:
     external:
-      name: secret/data/docker-poc/data#password
+      name: secret/docker-poc#password
