@@ -3,3 +3,16 @@ pipeline:
     image: node:carbon-alpine
     commands:
       - echo "HOLA MUNDO!!!!"
+      
+  publish:
+    image: plugins/docker
+    secrets: [ docker_username, docker_password ]
+    repo: vigohe/drone-poc
+
+secrets:
+  docker_username:
+    external:
+      name: secret/data/docker#user
+  docker_password:
+    external:
+      name: secret/data/docker#password
