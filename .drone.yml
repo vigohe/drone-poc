@@ -6,11 +6,17 @@ pipeline:
 
   publish:
     image: plugins/docker
-    secrets: [ docker_username, docker_password ]
+    secrets:
+        - docker_username
+        - docker_password
     repo: vigohe/drone-poc
+    auto_tag: true
 
 secrets:
   docker_username:
-    file: secret/docker-poc/user
+    external:
+      name: drone/docker-poc#username
   docker_password:
-    file: secret/docker-poc/password
+    external:
+      name: drone/docker-poc#password
+      
