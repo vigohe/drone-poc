@@ -1,22 +1,6 @@
 pipeline:
-  build:
-    image: node:carbon-alpine
-    commands:
-      - echo "HOLA MUNDO!!!!"
-
-  publish:
-    image: plugins/docker
-    secrets:
-        - docker_username
-        - docker_password
-    repo: vigohe/drone-poc
-    auto_tag: true
-
-secrets:
-  docker_username:
-    external:
-      name: drone/docker-poc#username
-  docker_password:
-    external:
-      name: drone/docker-poc#password
-      
+  poc:
+    image: vigohe/drone-var-poc:latest
+    vault:
+      - docker_username=secret/docker-poc#username
+      - docker_password=secret/docker-poc#password
