@@ -3,7 +3,7 @@ pipeline:
     image: node:carbon-alpine
     commands:
       - echo "HOLA MUNDO!!!!"
-      
+
   publish:
     image: plugins/docker
     secrets: [ docker_username, docker_password ]
@@ -12,7 +12,7 @@ pipeline:
 secrets:
   docker_username:
     external:
-      name: secret/data/docker#user
+      name: secret/docker#user
   docker_password:
     external:
-      name: secret/data/docker#password
+      name: secret/docker#password
